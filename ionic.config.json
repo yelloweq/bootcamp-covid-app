@@ -1,0 +1,7 @@
+{
+  "name": "helloWolrdapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
