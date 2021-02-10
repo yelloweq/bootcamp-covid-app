@@ -5,4 +5,4 @@ Iwo - change 1 :)
 
 IBN: "I really need to learn more about Git"s
 
-EUgene: "Sounds interesting" 
+Eugene: "Sounds interesting" 
