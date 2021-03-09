@@ -22,7 +22,7 @@ import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent }
 
 import { menu, home } from 'ionicons/icons'
 
-import landingpage from '../resources/images/landingpage.jpg';
+// import landingpage from '../../resources/images/landingpage.jpg';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -40,10 +40,11 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
+
+import '../../theme/variables.css';
 import './Home.css';
 
-/* Theme variables */
-import '../theme/variables.css';
+
 const Home: React.FC = () => (
   <IonApp>
     <IonMenu content-id="main-content">
@@ -53,11 +54,13 @@ const Home: React.FC = () => (
         </IonToolbar>
       </IonHeader>
 
-      <IonContent>
+      <IonContent >
         <IonList>
+
           <IonListHeader>
-            Navigate
+            {/* text */}
         </IonListHeader>
+      
           <IonMenuToggle auto-hide="false">
             <IonItem button>
               <IonIcon slot="start" icon={home}></IonIcon>
@@ -83,7 +86,9 @@ const Home: React.FC = () => (
           <IonTitle>Header</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">
+
+
+      <IonContent className="ion-padding" scrollX={false} >
 
         <IonCard>
           <IonCardHeader>
@@ -91,7 +96,7 @@ const Home: React.FC = () => (
           </IonCardHeader>
 
           <IonCardContent>
-            <p className="sometext">Amazing Canoes consists of a small developers team that aim to rise awareness on the rising number of Coronavirus cases around the world.</p>
+            <p>Amazing Canoes consists of a small developers team that aim to rise awareness on the rising number of Coronavirus cases around the world.</p>
             <br></br>
             <p> Here you can find reliable data on Covid-19 and some advice on how to protect yourself and the people around you. Our goal is to help and share information to the public in order to highlight the danger of this pandamic and save lives.  </p>
           </IonCardContent>

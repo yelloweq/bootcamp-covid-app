@@ -1,0 +1,17 @@
+body {
+    background: none;
+    
+    
+}
+
+
+ion-content {
+    --background: url('../../resources/images/landingpage.jpg') no-repeat 90% 90%/cover fixed;
+    
+}
+
+.scroll-content {
+    overflow: hidden; 
+}
+
+

@@ -1,8 +1,14 @@
 import React from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
-import Home from './components/pages/Home';
+import Home from './components/pages/Home/';
 
 class App extends React.Component {
 
@@ -28,8 +34,9 @@ class App extends React.Component {
             //         <CountryPicker />
             //         <Chart />
             //     </div>
-        )
+        );
     }
 }
+        
 
 export default App;
