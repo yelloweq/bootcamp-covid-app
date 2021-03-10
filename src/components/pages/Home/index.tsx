@@ -43,6 +43,7 @@ import '@ionic/react/css/display.css';
 
 import '../../theme/variables.css';
 import './Home.css';
+import { Link } from 'react-router-dom';
 
 
 const Home: React.FC = () => (
@@ -57,17 +58,29 @@ const Home: React.FC = () => (
       <IonContent >
         <IonList>
 
-          <IonListHeader>
-            {/* text */}
-        </IonListHeader>
-      
+          <br />
+
           <IonMenuToggle auto-hide="false">
-            <IonItem button>
-              <IonIcon slot="start" icon={home}></IonIcon>
-              <IonLabel>
-                Home
-            </IonLabel>
+
+            <IonItem button className="ion-padding">
+              <Link to="" className="link">
+                <IonIcon slot="start" icon={home}></IonIcon>
+                  <IonLabel className="link-label" >
+                    Link1
+                  </IonLabel>
+              </Link>  
             </IonItem>
+
+            <IonItem button className="ion-padding">
+              <Link to="" className="link">
+                <IonIcon slot="start" icon={home}></IonIcon>
+                  <IonLabel className="link-label">
+                    Link2
+                  </IonLabel>
+              </Link>
+            </IonItem>
+
+
           </IonMenuToggle>
         </IonList>
       </IonContent>
@@ -83,21 +96,23 @@ const Home: React.FC = () => (
               </IonButton>
             </IonMenuToggle>
           </IonButtons>
-          <IonTitle>Header</IonTitle>
+          <IonTitle>Welcome!</IonTitle>
         </IonToolbar>
       </IonHeader>
 
 
-      <IonContent className="ion-padding" scrollX={false} >
+      <IonContent className="ion-padding" >
 
-        <IonCard>
+        <IonCard className="info-box">
           <IonCardHeader>
-            <IonCardTitle>Amazing Canoes</IonCardTitle>
+            <IonCardTitle className="info-box-title">
+              Amazing Canoes
+            </IonCardTitle>
           </IonCardHeader>
 
-          <IonCardContent>
+          <IonCardContent >
             <p>Amazing Canoes consists of a small developers team that aim to rise awareness on the rising number of Coronavirus cases around the world.</p>
-            <br></br>
+            <br />
             <p> Here you can find reliable data on Covid-19 and some advice on how to protect yourself and the people around you. Our goal is to help and share information to the public in order to highlight the danger of this pandamic and save lives.  </p>
           </IonCardContent>
         </IonCard>

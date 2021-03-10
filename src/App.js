@@ -3,7 +3,8 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    Redirect
   } from "react-router-dom";
 import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
@@ -26,9 +27,11 @@ class App extends React.Component {
     render() {
         const { data } = this.state;
         return (
-            <div className={styles.container}>
-                <Home />;
-            </div>
+            <Router>
+                <Route path="/test" component={Home}/>
+                <Route exact path="/" render={ () => <Redirect to="/test" />} />
+
+            </Router>
             //     <div className={styles.container}>
             //         <Cards data={data}/>
             //         <CountryPicker />
@@ -37,6 +40,5 @@ class App extends React.Component {
         );
     }
 }
-        
 
 export default App;

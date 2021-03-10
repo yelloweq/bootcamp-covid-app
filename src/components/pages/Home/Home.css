@@ -6,12 +6,30 @@ body {
 
 
 ion-content {
-    --background: url('../../resources/images/landingpage.jpg') no-repeat 90% 90%/cover fixed;
+    --background: url('../../resources/images/landingpage.jpg') no-repeat 81% 90%/cover fixed;
     
 }
 
 .scroll-content {
     overflow: hidden; 
+}
+
+.info-box {
+    min-width:  80%;
+    background: rgba(30, 30, 30);
+    transform: translateX(-50%) translateY(-50%);
+    top: 40%;
+    left: 46%;
+    position: absolute;
+
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link-label {
+    color: white;
 }
 
 
