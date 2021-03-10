@@ -24,6 +24,10 @@ ion-content {
 
 }
 
+.info-box-title {
+    color: aqua;
+}
+
 .link {
     text-decoration: none;
 }
@@ -31,5 +35,11 @@ ion-content {
 .link-label {
     color: white;
 }
+
+/* .button {
+    position: relative;
+    margin: auto;
+    margin-top: 50vh;
+} */
 
 

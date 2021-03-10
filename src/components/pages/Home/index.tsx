@@ -116,6 +116,11 @@ const Home: React.FC = () => (
             <p> Here you can find reliable data on Covid-19 and some advice on how to protect yourself and the people around you. Our goal is to help and share information to the public in order to highlight the danger of this pandamic and save lives.  </p>
           </IonCardContent>
         </IonCard>
+        {/* <div className="button">
+        <IonButton expand="block" fill="solid" href="">Button 1</IonButton>
+        <IonButton expand="block" fill="solid" href="">Button 2</IonButton>
+        </div> */}
+
       </IonContent>
     </IonPage>
   </IonApp>
