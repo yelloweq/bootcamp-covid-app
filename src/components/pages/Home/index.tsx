@@ -101,7 +101,7 @@ const Home: React.FC = () => (
       </IonHeader>
 
 
-      <IonContent className="ion-padding" >
+      <IonContent className="ion-padding" id="main-background">
 
         <IonCard className="info-box">
           <IonCardHeader>
