@@ -4,10 +4,14 @@ body {
     
 }
 
-
+/* 
 ion-content {
     --background: url('../../resources/images/landingpage.jpg') no-repeat 81% 90%/cover fixed;
     
+} */
+
+#main-background {
+    --background: url('../../resources/images/landingpage.jpg') no-repeat 81% 90%/cover fixed;
 }
 
 .scroll-content {
