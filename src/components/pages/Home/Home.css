@@ -1,0 +1,45 @@
+body {
+    background: none;
+    
+    
+}
+
+
+ion-content {
+    --background: url('../../resources/images/landingpage.jpg') no-repeat 81% 90%/cover fixed;
+    
+}
+
+.scroll-content {
+    overflow: hidden; 
+}
+
+.info-box {
+    min-width:  80%;
+    background: rgba(30, 30, 30);
+    transform: translateX(-50%) translateY(-50%);
+    top: 40%;
+    left: 46%;
+    position: absolute;
+
+}
+
+.info-box-title {
+    color: aqua;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link-label {
+    color: white;
+}
+
+/* .button {
+    position: relative;
+    margin: auto;
+    margin-top: 50vh;
+} */
+
+
