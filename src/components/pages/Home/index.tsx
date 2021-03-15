@@ -5,11 +5,9 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonFooter,
   IonMenu,
   IonList,
   IonIcon,
-  IonListHeader,
   IonMenuToggle,
   IonLabel,
   IonPage,
@@ -18,9 +16,9 @@ import {
   IonItem
 } from '@ionic/react';
 
-import { IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCardContent } from '@ionic/react';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/react';
 
-import { menu, home } from 'ionicons/icons'
+import { menu, skull, statsChart } from 'ionicons/icons'
 
 // import landingpage from '../../resources/images/landingpage.jpg';
 
@@ -54,38 +52,29 @@ const Home: React.FC = () => (
           <IonTitle>Menu</IonTitle>
         </IonToolbar>
       </IonHeader>
-
       <IonContent >
         <IonList>
-
-          <br />
-
           <IonMenuToggle auto-hide="false">
-
-            <IonItem button className="ion-padding">
-              <Link to="" className="link">
-                <IonIcon slot="start" icon={home}></IonIcon>
-                  <IonLabel className="link-label" >
-                    Link1
+            <IonItem button className="menu-button-padding">
+                <IonIcon slot="start" icon={statsChart}></IonIcon>
+                <Link to="/graph" className="link">
+                  <IonLabel>
+                    Graph
                   </IonLabel>
-              </Link>  
+                </Link>  
             </IonItem>
-
-            <IonItem button className="ion-padding">
-              <Link to="" className="link">
-                <IonIcon slot="start" icon={home}></IonIcon>
-                  <IonLabel className="link-label">
-                    Link2
+            <IonItem button className="menu-button-padding">
+                <IonIcon slot="start" icon={skull}></IonIcon>
+                <Link to="/stats" className="link">
+                  <IonLabel >
+                    Stats
                   </IonLabel>
               </Link>
             </IonItem>
-
-
           </IonMenuToggle>
         </IonList>
       </IonContent>
     </IonMenu>
-
     <IonPage className="ion-page" id="main-content">
       <IonHeader>
         <IonToolbar>
@@ -99,28 +88,19 @@ const Home: React.FC = () => (
           <IonTitle>Welcome!</IonTitle>
         </IonToolbar>
       </IonHeader>
-
-
-      <IonContent className="ion-padding" id="main-background">
-
-        <IonCard className="info-box">
+      <IonContent className="ion-padding" id="main-content">
+        <IonCard className="info-card-content">
           <IonCardHeader>
             <IonCardTitle className="info-box-title">
               Amazing Canoes
             </IonCardTitle>
           </IonCardHeader>
-
-          <IonCardContent >
+          <IonCardContent className="ion-text-wrap">
             <p>Amazing Canoes consists of a small developers team that aim to rise awareness on the rising number of Coronavirus cases around the world.</p>
             <br />
             <p> Here you can find reliable data on Covid-19 and some advice on how to protect yourself and the people around you. Our goal is to help and share information to the public in order to highlight the danger of this pandamic and save lives.  </p>
           </IonCardContent>
         </IonCard>
-        {/* <div className="button">
-        <IonButton expand="block" fill="solid" href="">Button 1</IonButton>
-        <IonButton expand="block" fill="solid" href="">Button 2</IonButton>
-        </div> */}
-
       </IonContent>
     </IonPage>
   </IonApp>

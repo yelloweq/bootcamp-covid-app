@@ -10,6 +10,8 @@ import { Cards, Chart, CountryPicker } from './components';
 import styles from './App.module.css';
 import { fetchData } from './api';
 import Home from './components/pages/Home/';
+import Graph from './components/pages/Graph/Graph';
+import Stats from './components/pages/Stats/Stats';
 
 class App extends React.Component {
 
@@ -28,15 +30,14 @@ class App extends React.Component {
         const { data } = this.state;
         return (
             <Router>
-                <Route path="/test" component={Home}/>
-                <Route exact path="/" render={ () => <Redirect to="/test" />} />
+                <Route exact path="/home" component={Home}/>
+                <Route exact path="/stats">
+                    <Stats props={data} />
+                </Route>
+                <Route exact path="/graph" component={Graph}/>
+                <Route exact path="/" render={ () => <Redirect to="/home" />} />
 
             </Router>
-            //     <div className={styles.container}>
-            //         <Cards data={data}/>
-            //         <CountryPicker />
-            //         <Chart />
-            //     </div>
         );
     }
 }
