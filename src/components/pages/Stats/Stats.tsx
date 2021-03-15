@@ -1,21 +1,22 @@
 import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton } from '@ionic/react';
 import React from 'react';
-import Chart from '../../Chart/Chart';
-import './Graph.css';
+import Cards from '../../Cards/Cards';
+import './Stats.css';
 
-const Graph: React.FC = () => (
+const Stats: React.FC = (props) => (
     <IonApp>
         <IonPage>
             <IonToolbar>
                 <IonButtons slot="start">
                     <IonBackButton defaultHref="/home" />
                 </IonButtons>
-                <IonTitle>Title of page</IonTitle>
+                <IonTitle>Global Statistics</IonTitle>
             </IonToolbar>
-            
+            <Cards data={props} />
 
         </IonPage>
     </IonApp>
+
 );
 
-export default Graph;
+export default Stats;

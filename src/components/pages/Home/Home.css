@@ -4,46 +4,39 @@ body {
     
 }
 
-/* 
-ion-content {
-    --background: url('../../resources/images/landingpage.jpg') no-repeat 81% 90%/cover fixed;
-    
-} */
+#main-content {
+    --background: url('../../resources/images/landingpage.jpg') no-repeat 0vh 0vh/cover fixed;
+}
 
-#main-background {
-    --background: url('../../resources/images/landingpage.jpg') no-repeat 81% 90%/cover fixed;
+.menu-button-padding {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 1em;
+    
 }
 
 .scroll-content {
     overflow: hidden; 
 }
 
-.info-box {
-    min-width:  80%;
-    background: rgba(30, 30, 30);
-    transform: translateX(-50%) translateY(-50%);
-    top: 40%;
-    left: 46%;
+.info-card-content {
+    min-width:  50%;
+    background: rgba(30, 30, 30, 0.95);
+    top: 20vh;
+    left: 10vw;
+    right: 10vw;
     position: absolute;
 
 }
 
 .info-box-title {
-    color: aqua;
-}
-
-.link {
-    text-decoration: none;
-}
-
-.link-label {
     color: white;
 }
 
-/* .button {
-    position: relative;
-    margin: auto;
-    margin-top: 50vh;
-} */
+.link {
+    color: white;
+    text-decoration: none;
+}
 
 
