@@ -1,9 +1,17 @@
 .container {
-    margin: 50px 0;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
 
 }
 .card {
-    margin: 2% 2% !important;
+    margin: 2% 3% !important;
 }
 
 .infected {
@@ -16,4 +24,13 @@
 
 .deaths {
     border-bottom: 10px solid rgba(255, 0, 0, 1);
+}
+
+.loading-screen {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }

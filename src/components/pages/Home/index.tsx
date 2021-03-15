@@ -18,8 +18,6 @@ import {
 
 import { IonCard, IonCardHeader, IonCardTitle, IonCardContent } from '@ionic/react';
 
-import { menu, skull, statsChart } from 'ionicons/icons'
-
 // import landingpage from '../../resources/images/landingpage.jpg';
 
 /* Core CSS required for Ionic components to work properly */
@@ -41,50 +39,12 @@ import '@ionic/react/css/display.css';
 
 import '../../theme/variables.css';
 import './Home.css';
-import { Link } from 'react-router-dom';
 
 
 const Home: React.FC = () => (
-  <IonApp>
-    <IonMenu content-id="main-content">
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle>Menu</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent >
-        <IonList>
-          <IonMenuToggle auto-hide="false">
-            <IonItem button className="menu-button-padding">
-                <IonIcon slot="start" icon={statsChart}></IonIcon>
-                <Link to="/graph" className="link">
-                  <IonLabel>
-                    Graph
-                  </IonLabel>
-                </Link>  
-            </IonItem>
-            <IonItem button className="menu-button-padding">
-                <IonIcon slot="start" icon={skull}></IonIcon>
-                <Link to="/stats" className="link">
-                  <IonLabel >
-                    Stats
-                  </IonLabel>
-              </Link>
-            </IonItem>
-          </IonMenuToggle>
-        </IonList>
-      </IonContent>
-    </IonMenu>
     <IonPage className="ion-page" id="main-content">
       <IonHeader>
         <IonToolbar>
-          <IonButtons slot="start">
-            <IonMenuToggle>
-              <IonButton>
-                <IonIcon slot="icon-only" icon={menu}></IonIcon>
-              </IonButton>
-            </IonMenuToggle>
-          </IonButtons>
           <IonTitle>Welcome!</IonTitle>
         </IonToolbar>
       </IonHeader>
@@ -103,7 +63,6 @@ const Home: React.FC = () => (
         </IonCard>
       </IonContent>
     </IonPage>
-  </IonApp>
 );
 
 export default Home;

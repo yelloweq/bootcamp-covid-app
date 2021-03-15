@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Typography, Grid } from '@material-ui/core';
 import styles from '../Cards/Cards.module.css';
+import VisibilitySensor from 'react-visibility-sensor';
 import CountUp from 'react-countup';
+import { fetchData } from '../../api';
+
 import cx from 'classnames';
 
+
 const Cards = (props) => {
-    const { data: { props: { confirmed, deaths, recovered, lastUpdate } } } = props;
+    const { props: { props: { confirmed, deaths, recovered, lastUpdate } }, update } = props;
 
     if (!confirmed) {
         return (
-            <div>
+            <div className="loading-screen">
                 <h1>loading</h1>
             </div>
         );
@@ -23,7 +27,7 @@ const Cards = (props) => {
                     <CardContent>
                         <Typography align="center" color="textSecondary" gutterBottom>Infected</Typography>
                         <Typography align="center" variant="h5">
-                            <CountUp start={0} end={confirmed.value} duration={2.5} separator="," />
+                            <CountUp start={0} end={confirmed.value} duration={2.5} separator="," redraw={true} useEasing={true}/>
                         </Typography>
                         <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography align="center" variant="body2">Active cases of covid-19</Typography>
