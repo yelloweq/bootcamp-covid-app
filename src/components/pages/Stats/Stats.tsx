@@ -17,7 +17,7 @@ const Stats: React.FC = (props) => {
 
     return (
         <IonPage>
-            <IonToolbar>
+            <IonToolbar mode="ios">
                 <IonButtons slot="end">
                     <IonButton onClick={() => {
                         fetchData().then((res) => {
