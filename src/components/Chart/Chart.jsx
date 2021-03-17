@@ -1,8 +1,10 @@
 import React from 'react';
 
-const Chart = () => {
+const Chart = (data) => {
     return(
-        <h1>Chart</h1>
+        <div>
+            <p>data</p>
+        </div>
     )
 }
 
