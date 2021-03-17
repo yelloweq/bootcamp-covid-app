@@ -1,4 +1,4 @@
-import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton, IonHeader, IonContent } from '@ionic/react';
+import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton } from '@ionic/react';
 import React from 'react';
 import Chart from '../../Chart/Chart';
 import './Graph.css';
