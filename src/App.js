@@ -34,7 +34,9 @@ class App extends React.Component {
                 <Route exact path="/stats">
                     <Stats props={data} />
                 </Route>
-                <Route exact path="/graph" component={Graph}/>
+                <Route exact path="/graph" component={Graph}>
+                    <Stats props={data} />
+                </Route>
                 <Route exact path="/" render={ () => <Redirect to="/home" />} />
 
             </Router>
