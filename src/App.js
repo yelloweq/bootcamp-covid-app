@@ -44,7 +44,6 @@ class App extends React.Component {
     render() {
         const { data, data2 } = this.state;
         return (
-<<<<<<< HEAD
             <IonApp>
                 <IonReactRouter>
                     <IonContent>
@@ -79,19 +78,6 @@ class App extends React.Component {
                     </IonContent>
                 </IonReactRouter>
             </IonApp>
-=======
-            <Router>
-                <Route exact path="/home" component={Home}/>
-                <Route exact path="/stats">
-                    <Stats props={data} />
-                </Route>
-                <Route exact path="/graph">
-                    <Stats props={data2} />
-                </Route>
-                <Route exact path="/" render={ () => <Redirect to="/home" />} />
-
-            </Router>
->>>>>>> ad7fec6 (Updated API and updated app.js to link new data)
         );
     }
 }
