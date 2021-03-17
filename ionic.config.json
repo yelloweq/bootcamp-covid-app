@@ -1,5 +1,5 @@
 {
-  "name": "helloWolrdapp",
+  "name": "covidtracker",
   "integrations": {
     "capacitor": {}
   },
