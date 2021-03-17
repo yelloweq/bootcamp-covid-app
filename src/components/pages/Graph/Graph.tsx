@@ -13,20 +13,9 @@ const Graph: React.FC = (props) => (
                 </IonButtons>
                 <IonTitle>Local graph of COVID</IonTitle>
             </IonToolbar>
-        </IonHeader>
-
-        <IonContent>
-            
-<<<<<<< HEAD
-
-        </IonContent>
-    </IonPage>
-
-=======
             <Chart data={props}></Chart>
         </IonPage>
     </IonApp>
->>>>>>> ad7fec6 (Updated API and updated app.js to link new data)
 );
 
 export default Graph;
