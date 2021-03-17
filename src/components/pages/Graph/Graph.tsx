@@ -1,21 +1,25 @@
-import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton } from '@ionic/react';
+import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton, IonHeader, IonContent } from '@ionic/react';
 import React from 'react';
 import Chart from '../../Chart/Chart';
 import './Graph.css';
 
 const Graph: React.FC = () => (
-    <IonApp>
-        <IonPage>
-            <IonToolbar>
-                <IonButtons slot="start">
-                    <IonBackButton defaultHref="/home" />
-                </IonButtons>
-                <IonTitle>Title of page</IonTitle>
+    <IonPage>
+
+        <IonHeader>
+            <IonToolbar mode="ios">
+                <IonTitle>
+                    Graph page
+                </IonTitle>
             </IonToolbar>
+        </IonHeader>
+
+        <IonContent>
             
 
-        </IonPage>
-    </IonApp>
+        </IonContent>
+    </IonPage>
+
 );
 
 export default Graph;
