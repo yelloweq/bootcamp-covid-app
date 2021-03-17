@@ -13,7 +13,6 @@ import {
 
 import styles from './App.module.css';
 import { fetchData } from './api';
-import { Cards, Chart, CountryPicker } from './components';
 import Home from './components/pages/Home/';
 import Graph from './components/pages/Graph/Graph';
 import Stats from './components/pages/Stats/Stats';
@@ -71,16 +70,6 @@ class App extends React.Component {
                     </IonContent>
                 </IonReactRouter>
             </IonApp>
-
-            // <Router>
-            //     <Route exact path="/home" component={Home}/>
-            //     <Route exact path="/stats">
-            //         <Stats props={data} />
-            //     </Route>
-            //     <Route exact path="/graph" component={Graph}/>
-            //     <Route exact path="/" render={ () => <Redirect to="/home" />} />
-
-            // </Router>
         );
     }
 }

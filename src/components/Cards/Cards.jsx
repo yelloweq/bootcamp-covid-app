@@ -14,7 +14,7 @@ const Cards = (props) => {
     if (!confirmed) {
         return (
             <div className="loading-screen">
-                <h1>loading</h1>
+                <h1>Loading data...</h1>
             </div>
         );
     }
@@ -30,18 +30,16 @@ const Cards = (props) => {
                             <CountUp start={0} end={confirmed.value} duration={2.5} separator="," redraw={true} useEasing={true}/>
                         </Typography>
                         <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-                        <Typography align="center" variant="body2">Active cases of covid-19</Typography>
                     </CardContent>
                 </Grid>
 
                 <Grid item component={Card} xs={12} md={3} className={cx(styles.card, styles.recovered)}>
-                    <CardContent>
+                <CardContent>
                         <Typography align="center" color="textSecondary" gutterBottom>Recovered</Typography>
                         <Typography align="center" variant="h5">
                             <CountUp start={0} end={recovered.value} duration={2.5} separator="," />
                         </Typography>
                         <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-                        <Typography align="center" variant="body2">Recoveries from covid-19</Typography>
                     </CardContent>
                 </Grid>
 
@@ -52,7 +50,6 @@ const Cards = (props) => {
                             <CountUp start={0} end={deaths.value} duration={2.5} separator="," />
                         </Typography>
                         <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
-                        <Typography align="center" variant="body2">Deaths from covid-19</Typography>
                     </CardContent>
                 </Grid>
             </Grid>

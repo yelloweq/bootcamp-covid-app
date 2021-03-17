@@ -1,5 +1,5 @@
-import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton, useIonViewWillEnter, IonButton, IonIcon, IonLabel } from '@ionic/react';
-import React, { useState, useEffect } from 'react';
+import { IonPage, IonToolbar, IonButtons, IonTitle, IonButton, IonIcon } from '@ionic/react';
+import React, { useState } from 'react';
 import Cards from '../../Cards/Cards';
 import { fetchData } from '../../../api'
 import { refresh } from 'ionicons/icons';
@@ -22,6 +22,7 @@ const Stats: React.FC = (props) => {
                     <IonButton onClick={() => {
                         fetchData().then((res) => {
                             setData(res);
+                            console.log(data)
                         })
                     }}>
                         <IonIcon slot="icon-only" icon={refresh} />
