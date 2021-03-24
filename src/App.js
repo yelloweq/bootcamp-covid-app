@@ -12,7 +12,7 @@ import {
 } from '@ionic/react';
 
 import styles from './App.module.css';
-import { fetchData } from './api';
+import { fetchData, graphData } from './api';
 import Home from './components/pages/Home/';
 import Graph from './components/pages/Graph/Graph';
 import Stats from './components/pages/Stats/Stats';
@@ -25,16 +25,24 @@ class App extends React.Component {
     state = {
         data: {},
 
+        // (IBN) Can't think of a better name
+        graphData: {},
+
     }
 
     async componentDidMount() {
         const fetchedData = await fetchData();
         console.log(fetchedData);
         this.setState({ data: fetchedData })
+
+        // (IBN) Get data for Graph page
+        const fetchedDataForGraph = await graphData();
+        console.log(fetchedDataForGraph);
+        this.setState({ graphData: fetchedDataForGraph })
     }
 
     render() {
-        const { data } = this.state;
+        const { data, graphData } = this.state;
         return (
             <IonApp>
                 <IonReactRouter>
@@ -43,7 +51,9 @@ class App extends React.Component {
 
                             <IonRouterOutlet>
                                 <Route path="/home" component={Home} exact />
-                                <Route path="/graph" component={Graph} exact />
+                                <Route path="/graph" exact>
+                                    <Graph props={graphData} />
+                                </Route>
                                 <Route path="/stats" exact>
                                     <Stats props={data} />
                                 </Route>
