@@ -51,7 +51,9 @@ class App extends React.Component {
 
                             <IonRouterOutlet>
                                 <Route path="/home" component={Home} exact />
-                                <Route path="/graph" component={Graph} exact />
+                                <Route path="/graph" exact>
+                                    <Graph props={data2} />
+                                </Route>
                                 <Route path="/stats" exact>
                                     <Stats props={data} />
                                 </Route>
