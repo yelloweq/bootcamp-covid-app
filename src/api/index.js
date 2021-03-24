@@ -25,10 +25,25 @@ export const fetchData = async () => {
 }
 
 // (IBN) Using the same API file to fetch data for Graph page
-function endpointGraph() {
-    const
-        AreaType = "nation",
-        AreaName = "england";
+// (IBN) Get API 
+function getAPIdata(code) {
+    const AreaType = "nation";
+    var AreaName;
+    switch (code) {
+        case 0:
+            AreaName = "england";
+            break;
+        case 1:
+            AreaName = "scotland";
+            break;
+        case 2:
+            AreaName = "wales";
+            break;
+        case 3:
+            AreaName = "northern ireland";
+            break;
+    }    
+        
     const
         filters = [
             `areaType=${AreaType}`,
@@ -46,15 +61,10 @@ function endpointGraph() {
                 cumulative: "cumDeaths28DaysByPublishDate"
             }
         };
-    // const
-    //     apiParams = `filters=${filters.join(";")}&structure=${JSON.stringify(structure)}`,
-    //     encodedParams = encodeURI(apiParams);
-    // return `https://api.coronavirus.data.gov.uk/v1/data?${encodedParams}`;
     const
         apiParams = {
             filters: filters.join(";"),
             structure: JSON.stringify(structure),
-            // latestBy: "newCasesByPublishDate"
         };
     return apiParams;
 }
@@ -63,14 +73,25 @@ export const graphData = async () => {
     try {
         const endpoint = 'https://api.coronavirus.data.gov.uk/v1/data';
 
-        const { data: {data} } = await axios.get(
-            endpoint, {
-            params: endpointGraph(),
-            timeout: 10000
-            }
-        );
-        const sctructuredData = data;
-        return sctructuredData;
+        const areaData = new Array(4);
+        for (let i = 0; i < areaData.length; i++) {
+            const { data: {data} } = await axios.get(
+                endpoint, {
+                params: getAPIdata(i),
+                timeout: 10000
+                }
+            );
+            areaData[i] = data;
+        }
+        return areaData;
+        // const { data: {data} } = await axios.get(
+        //     endpoint, {
+        //     params: getAPIdata(),
+        //     timeout: 10000
+        //     }
+        // );
+        // const sctructuredData = data;
+        // return sctructuredData;
 
     } catch (error) {
         console.log("Testing");

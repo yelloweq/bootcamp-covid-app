@@ -26,7 +26,7 @@ class App extends React.Component {
         data: {},
 
         // (IBN) Can't think of a better name
-        data2: {},
+        graphData: {},
 
     }
 
@@ -38,11 +38,11 @@ class App extends React.Component {
         // (IBN) Get data for Graph page
         const fetchedDataForGraph = await graphData();
         console.log(fetchedDataForGraph);
-        this.setState({ data2: fetchedDataForGraph })
+        this.setState({ graphData: fetchedDataForGraph })
     }
 
     render() {
-        const { data, data2 } = this.state;
+        const { data, graphData } = this.state;
         return (
             <IonApp>
                 <IonReactRouter>
@@ -52,7 +52,7 @@ class App extends React.Component {
                             <IonRouterOutlet>
                                 <Route path="/home" component={Home} exact />
                                 <Route path="/graph" exact>
-                                    <Graph props={data2} />
+                                    <Graph props={graphData} />
                                 </Route>
                                 <Route path="/stats" exact>
                                     <Stats props={data} />
