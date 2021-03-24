@@ -1,7 +1,9 @@
 import { IonApp, IonPage, IonToolbar, IonButtons, IonTitle, IonBackButton } from '@ionic/react';
 import React from 'react';
-import Chart from '../../Chart/Chart';
+import Charting from '../../Chart/Chart';
 import './Graph.css';
+
+import * as HighCharts from 'highcharts';
 
 const Graph: React.FC = (props) => (
 
@@ -13,7 +15,7 @@ const Graph: React.FC = (props) => (
                 </IonButtons>
                 <IonTitle>Local graph of COVID</IonTitle>
             </IonToolbar>
-            <Chart data={props}></Chart>
+            <Charting data={props}></Charting>
         </IonPage>
     </IonApp>
 );
