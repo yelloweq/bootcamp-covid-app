@@ -10,6 +10,7 @@ import cx from 'classnames';
 
 const Cards = (props) => {
     const { props: { props: { confirmed, deaths, recovered, lastUpdate } }, update } = props;
+    let updateDate = lastUpdate;
 
     if (!confirmed) {
         return (
@@ -17,6 +18,13 @@ const Cards = (props) => {
                 <h1>Loading data...</h1>
             </div>
         );
+    }
+
+    if (update != undefined){
+        confirmed.value = update.confirmed.value;
+        deaths.value = update.deaths.value;
+        recovered.value = update.recovered.value;
+        updateDate = update.lastUpdate;
     }
 
 
@@ -27,9 +35,9 @@ const Cards = (props) => {
                     <CardContent>
                         <Typography align="center" color="textSecondary" gutterBottom>Infected</Typography>
                         <Typography align="center" variant="h5">
-                            <CountUp start={0} end={confirmed.value} duration={2.5} separator="," redraw={true} useEasing={true}/>
+                            <CountUp start={0} delay={0.15} end={confirmed.value} duration={2.5} separator="," redraw={true}/>
                         </Typography>
-                        <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
+                        <Typography align="center" color="textSecondary">{new Date(updateDate).toDateString()}</Typography>
                     </CardContent>
                 </Grid>
 
@@ -37,9 +45,9 @@ const Cards = (props) => {
                 <CardContent>
                         <Typography align="center" color="textSecondary" gutterBottom>Recovered</Typography>
                         <Typography align="center" variant="h5">
-                            <CountUp start={0} end={recovered.value} duration={2.5} separator="," />
+                            <CountUp start={0} delay={0.15} end={recovered.value} duration={2.5} separator="," redraw={true}/>
                         </Typography>
-                        <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
+                        <Typography align="center" color="textSecondary">{new Date(updateDate).toDateString()}</Typography>
                     </CardContent>
                 </Grid>
 
@@ -47,9 +55,9 @@ const Cards = (props) => {
                     <CardContent>
                         <Typography align="center" color="textSecondary" gutterBottom>Deaths</Typography>
                         <Typography align="center" variant="h5">
-                            <CountUp start={0} end={deaths.value} duration={2.5} separator="," />
+                            <CountUp start={0} delay={0.15} end={deaths.value} duration={2.5} separator="," redraw={true} />
                         </Typography>
-                        <Typography align="center" color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
+                        <Typography align="center" color="textSecondary">{new Date(updateDate).toDateString()}</Typography>
                     </CardContent>
                 </Grid>
             </Grid>
